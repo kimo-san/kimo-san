@@ -1,0 +1,91 @@
+#!/bin/bash
+
+echo-title() {
+    local text="$2"
+    local format="$1"
+    local columns=$(tput cols)
+    local padding=$(( (columns - ${#text}) / 2 ))
+    printf "%*s%s\n" $padding "" "$format$text$normal"
+}
+
+new-input() {
+    printf "\n\n"
+    echo-title "$(tput setaf 150 bold)" "$1"
+    printf "\n"
+}
+
+new-input "TODO block"
+new-input "Try install Obsidian" # TODO
+new-input "Try install Apostroph" # TODO
+new-input "Try install Chrome" # TODO
+
+printf "\n\n\n"
+echo-title "$(tput setaf 150 bold)" "( O ⁠ω ⁠O )"
+
+new-input "Try install Steam"
+sudo apt install steam
+
+new-input "Try install Htop"
+sudo apt install htop
+
+new-input "Try install Gnome-Boxes"
+sudo apt install gnome-boxes
+
+new-input "Try install 64gram"
+wget https://github.com/TDesktop-x64/tdesktop/releases/download/v1.1.79/64Gram_1.1.79_linux.zip
+mkdir ./.local/bin/.64gram
+unzip 64Gram_1.1.79_linux.zip -d ./.local/bin/.64gram
+rm 64Gram_1.1.79_linux.zip
+ln -s ~/.local/bin/.64gram/Telegram ./.local/bin/64gram
+
+new-input "Try install VSCode"
+wget https://vscode.download.prss.microsoft.com/dbazure/download/stable/385651c938df8a906869babee516bffd0ddb9829/code_1.104.3-1759409451_amd64.deb
+sudo apt install code_1.104.3-1759409451_amd64.deb
+rm code_1.104.3-1759409451_amd64.deb
+
+new-input "Try install Arduino IDE"
+wget https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.6_Linux_64bit.AppImage
+chmod +x arduino-ide_2.3.6_Linux_64bit.AppImage
+mv arduino-ide_2.3.6_Linux_64bit.AppImage arduino-ide
+mv arduino-ide ./.local/bin/
+
+new-input "Try install Microbit-Util"
+curl https://raw.githubusercontent.com/kimo-san/eazy-microbit-cpp/refs/heads/main/installation.sh | bash
+
+new-input "Try install Android Studio"
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2025.1.3.7/android-studio-2025.1.3.7-linux.tar.gz
+tar -xvzf android-studio-2025.1.3.7-linux.tar.gz
+rm android-studio-2025.1.3.7-linux.tar.gz
+mv ./android-studio ./.android-studio
+mv ./.android-studio ./.local/bin
+cd ./.local/bin
+ln -s ./.android-studio/bin/studio ./android-studio
+
+new-input "Try install Themes"
+mkdir ~/.themes
+sudo apt install gnome-shell-extensions
+sudo apt install gnome-tweaks
+
+# MAKE BACKUPS
+# mkdir ./shell-backup/
+# cd ./shell-backup/
+# zip -r gnome-shell.zip ~/.local/share/gnome-shell/
+# zip -r dconf.zip ~/.config/dconf/
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
