@@ -1,3 +1,2 @@
-## кимо
-
-Учусь писать код
+## kimo
+Learning how to write good code.
