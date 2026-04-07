@@ -1,2 +1,2 @@
 ## kimo
-Learning how to write good code.
+Goddamm I got bad news from my fish-phone...
